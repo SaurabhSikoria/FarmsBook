@@ -2,11 +2,14 @@
   box-sizing: border-box;
   margin: 0;
 }
+:root {
+  --mainGreen: #376f02;
+}
 .App {
   text-align: center;
 }
 .App-header {
-  background-color: #387002;
+  background-color: var(--mainGreen);
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -28,7 +31,27 @@
   padding: 8px;
 }
 .menu-bar {
+  position: relative;
+  display: inline-block;
+}
+.bar {
   cursor: pointer;
+}
+.menu-content {
+  display: none;
+  min-width: 222px;
+  background-color: var(--mainGreen);
+  list-style: none;
+  position: absolute;
+  bottom: -8.4rem;
+  right: 0;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  padding: 1rem 2rem;
+  z-index: 1;
+}
+.menu-content li {
+  cursor: pointer;
+  padding: 0.5rem 0;
 }
 .container {
   margin: 1rem 12%;
@@ -55,17 +78,20 @@
 .start {
   text-align: left;
   color: #67a042;
-  font-size: 2.5rem;
+  font-size: 3.5vw;
 }
 .start span {
   font-weight: 600;
 }
 .start div {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 1vw;
+}
+main {
+  display: flex;
 }
 .info {
-  font-size: 1.8rem;
+  font-size: 2.5vw;
   text-align: left;
 }
 .info img {
@@ -81,32 +107,35 @@
   font-weight: 500;
   color: #656565;
 }
-main {
-  display: flex;
-  justify-content: space-evenly;
-}
 .banners {
   display: flex;
   justify-content: space-evenly;
-}
-.test2 {
-  margin-left: 2%;
-  transform: translateY(-25px);
-}
-.banners {
-  margin-left: 5%;
+  transform: translateY(-1.5vw);
+  margin: 0 0 0 5%;
 }
 .banners img {
-  object-fit: contain;
-  height: 150px;
+  width: 13rem;
+  object-fit: cover;
+}
+.banner-right {
+  margin-left: 3%;
+  transform: translateY(calc(-1vw - 10px));
+}
+.banner-left {
+  display: flex;
+  flex-direction: column;
 }
 .banner1 {
+  height: 59.2%;
   border-top-left-radius: 20px;
+  margin-bottom: 4%;
 }
 .banner2 {
   border-bottom-left-radius: 20px;
+  height: 36%;
 }
 .banner3 {
+  margin-bottom: 3%;
   border-top-right-radius: 20px;
 }
 .banner4 {
@@ -141,13 +170,25 @@ main {
 }
 .Rating {
   border-radius: 50%;
-  background-image: linear-gradient(#357036, #84f91c);
-  height: 100px;
-  width: 100px;
-  padding: 1rem;
+  background-image: linear-gradient(#397102, #73d814);
+  width: 15%;
+  padding-top: 15%;
   margin: 1rem;
-  align-content: center;
+  position: relative;
+  text-align: left;
   box-shadow: 2px 2px 12px grey;
+}
+.Rating p {
+  color: #f6f06d;
+  position: absolute;
+  top: 22%;
+  left: 24%;
+  font-size: 1.7vw;
+  font-weight: 500;
+}
+.Rating span {
+  position: absolute;
+  font-size: 2.3vw;
 }
 .goals {
   display: flex;
@@ -155,22 +196,20 @@ main {
   justify-content: space-evenly;
 }
 .Goal {
-  height: 200px;
+  height: 186px;
   width: 19%;
   border-radius: 10px;
   box-shadow: 2px 2px 20px grey;
   padding: 6px;
+  max-width: 150px;
 }
 .Goal p {
   color: #387002;
-  font-size: 20px;
+  font-size: 2.1vw;
   margin-bottom: 1rem;
 }
 .Goal svg {
-  height: 100px;
-}
-.Rating span {
-  color: #f6f06d;
+  color: #a7a7a7;
 }
 .contain {
   display: flex;
@@ -180,6 +219,63 @@ main {
 .images {
   display: grid;
   grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+.crops {
+  margin: 2rem 0;
+}
+.crops h1 {
+  margin: 1rem;
+}
+.crop {
+  height: 270px;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  background-color: #6c9e3c;
+}
+.crop-content {
+  position: absolute;
+  bottom: 0;
+  margin: 2vw;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.buy-btn {
+  border-radius: 20px;
+  background-color: #5eac14;
+  color: #f6f06d;
+  padding: 0.5rem;
+  font-size: 1vw;
+  cursor: pointer;
+  font-weight: 700;
+}
+.buy-btn:hover {
+  background-color: #99e055f7;
+}
+.downloader {
+  position: absolute;
+  width: 60%;
+  font-size: 2rem;
+  text-overflow: ellipsis;
+  margin: 3vw;
+}
+.downloader img {
+  width: 80%;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+.candidates {
+  display: flex;
+  justify-content: space-evenly;
+}
+.candidates .Rating {
+  width: 73%;
+  padding-top: 73%;
+}
+.candidates img {
+  object-fit: contain;
 }
 .farmers {
   margin: 4rem 0;
@@ -204,25 +300,132 @@ main {
   box-shadow: 0px 0px 6px -1px grey;
   cursor: pointer;
 }
+.achievements {
+  margin: 1rem;
+}
+.achievement-block {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.achievement {
+  display: flex;
+  justify-content: space-evenly;
+}
+.achievement .description {
+  flex-basis: 40%;
+  background-color: green;
+}
+.bottom-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-text p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+.bottom-text img {
+  width: 200px;
+  border-radius: 10px;
+}
 .footer {
-  background-color: #387002;
+  background-color: var(--mainGreen);
   display: flex;
   justify-content: space-evenly;
   height: auto;
   color: #f6f06d;
 }
+.footer > div {
+  width: 33%;
+}
+.footer h3 {
+  margin: 2% 3%;
+}
 .social-icons {
   display: flex;
   justify-content: space-between;
-}
-.social-icons svg {
-  margin-right: 3%;
+  padding: 0.5rem 4rem;
 }
 .Contacts div {
   display: flex;
   justify-content: left;
   align-items: center;
+  margin: 4px;
+}
+.Contacts div p {
+  margin-left: 4%;
+  text-align: left;
+  font-size: 0.8rem;
 }
 .numbers {
   flex-direction: column;
+}
+@media screen and (max-width: 640px) {
+  .start {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  main {
+    flex-direction: column-reverse;
+  }
+  .info {
+    text-align: center;
+    align-content: center;
+    font-size: 1.5rem;
+  }
+  .info img {
+    margin: 1rem auto;
+  }
+  .banners {
+    margin: 1.4rem 5% 0.5rem 5%;
+  }
+  .banners img {
+    width: 9.1rem;
+  }
+  .goals {
+    flex-direction: column;
+  }
+  .Goal {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100vw;
+    justify-content: left;
+    height: auto;
+    align-items: center;
+    margin: 2%;
+    padding: 1rem;
+    max-width: 100%;
+  }
+  .Goal p {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  .crop {
+    height: 200px;
+  }
+  .downloader {
+    font-size: 1.3rem;
+    margin: 3vw;
+  }
+  .bottom-text {
+    flex-direction: column;
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer > div {
+    width: 100%;
+    text-align: left;
+    margin: 0.2rem 2.7rem;
+  }
+  .social-icons {
+    padding: 0 0.5rem;
+    justify-content: left;
+  }
+  .social-icons svg {
+    margin-left: 0.4rem;
+  }
 }

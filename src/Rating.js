@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Rating = () => {
+const Rating = ({value, props}) => {
     return (
         <div className="Rating">
-            <span>here</span>
+            <p><span><strong>{value}</strong></span><br />{props}</p>
         </div>
     )
 }

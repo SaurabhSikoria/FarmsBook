@@ -15,24 +15,24 @@ const Footer = () => {
             <div className="social">
                 <h3>Social Media</h3>
                 <div className="social-icons">
-                    <FaYoutube size={30}/>
-                    <FaInstagram size={30}/>
-                    <SiFacebook size={30}/>
-                    <FaLinkedin size={30}/>
+                    <FaYoutube size={4+'vw'}/>
+                    <FaInstagram size={4+'vw'}/>
+                    <SiFacebook size={4+'vw'}/>
+                    <FaLinkedin size={4+'vw'}/>
                 </div>
             </div>
             <div className="Contacts">
                 <h3>Contacts</h3>
                 <div>
-                    <TiLocation />
+                    <TiLocation size={28}/>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                 </div>
                 <div>
-                    <SiGooglemessages />
+                    <SiGooglemessages size={25}/>
                     <p>dummy@gmail.com</p>
                 </div>
                 <div>
-                    <IoIosCall />
+                    <IoIosCall size={25}/>
                     <div className='numbers'>
                         <p>+9157250239324</p>
                         <p>+9157250239324</p>

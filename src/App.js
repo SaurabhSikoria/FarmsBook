@@ -1,6 +1,6 @@
 import './App.css';
 import Rating from './Rating';
-import {FaBars, FaRegCalendarAlt, FaHandsHelping} from 'react-icons/fa'
+import {FaRegCalendarAlt, FaHandsHelping} from 'react-icons/fa'
 import {TiShoppingCart} from 'react-icons/ti'
 import {GiReceiveMoney} from 'react-icons/gi'
 import {SiGoogleanalytics} from 'react-icons/si'
@@ -8,26 +8,26 @@ import partner0 from './images/partners/0.jpg'
 import partner1 from './images/partners/1.jpg'
 import partner2 from './images/partners/2.jpg'
 import partner3 from './images/partners/3.jpg'
+import image from './images/farmersectionimage.jpg'
+import farmland from './images/farmland.jpg'
 import image1 from './images/products/l1.jpg'
+import image2 from './images/products/l2.jpg'
+import image3 from './images/products/l3.jpg'
 import award from './images/award3.jpg'
 import farmers from './images/allfarmers.jpeg'
-import logo from './images/farmsbooklogo.png'
+import farmer1 from './images/farmers/13.jpg'
 import download from './images/download.png'
 import Goals from './Goals';
+import Crops from './Crops';
+import Header from './Header'
 import Footer from './Footer'
+import Achievement from './Achievement';
+import Team from './Team';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="logo-container">
-          <img src={logo} alt="" />
-          <h3>FarmsBook</h3>
-        </div>
-        <div className="menu-bar">
-        <FaBars />
-        </div>
-      </header>
+      <Header />
       <div className="container">
         <div className="start">
           <p><span> We</span> <div className="animation1"> are</div>
@@ -43,13 +43,13 @@ function App() {
             chain efficiency.</span>
             <img src={download} alt="Download" /></div>
           <div className="banners">
-            <div className="test1">
-              <img src={award} alt="image" className='banner1' />
-              <img src={award} alt="image" className='banner2' />
+            <div className="banner-left">
+                <img src={farmland} alt="image"className='banner1'  />
+                <img src={farmland} alt="image" className="banner2"/>
             </div>
-            <div className="test2">
-              <img src={award} alt="image" className='banner3' />
-              <img src={award} alt="image" className='banner4' />
+            <div className="banner-right">
+              <img src={farmland} alt="image"className="banner3" />
+              <img src={farmland} alt="image"className="banner4" />
             </div>
             </div>
         </main>
@@ -57,7 +57,7 @@ function App() {
           <p>About FarmsBook</p>
           <div>
             <h3>"Empowering Farmers and Buyers for the Better Future"</h3>
-            <p><img src={image1} alt="Farmer" /> Farmsbook is one of the fastest growing start-ups in Agri Tech sector and one of the very few companies providing
+            <p><img src={image} alt="Farmer" /> Farmsbook is one of the fastest growing start-ups in Agri Tech sector and one of the very few companies providing
             end-to-end solutions and services to the farming community in India. We are building AI-enabled technologies to
             revolutionize supply chain and production efficiency in farm sector.<br />
             Currently we are operating in Rajasthan with 1 Lakh farmers in our service network and our goal is to bring our
@@ -79,20 +79,32 @@ function App() {
         <div>
           <h1>Current Status</h1>
           <div className="contain">
-            <Rating />
-            <Rating />
-            <Rating />
-            <Rating />
+            <Rating value={'250+'} props={'FPO'} />
+            <Rating value={'100K+'} props={'Farmers'} />
+            <Rating value={'5000+'} props={'Organic Farmers'} />
+            <Rating value={'20+'} props={'Crops'} />
           </div>
         </div>
-        <div>
-          <p>Buy Crops</p>
+        <div className='crops'>
+          <h1>Buy Crops</h1>
           <div className="images">
-            <img src="./images/products/l1.jpg" alt="image1" />
+            <Crops image={image1} title={'Olive '} organic={true}/>
+            <Crops image={image2} title={'Olive OIl'} organic={true}/>
+            <div className="crop">
+              <div className="downloader">
+                <p>Download our app for Exclusive Offers</p>
+                <img src={download} alt="Download" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="team">
           <h1>Our Team</h1>
+          <div className='candidates'>
+            <Team image={farmer1} name={'Our Candidate'} quote={'Here Comes a quote'}/>
+            <Team image={farmer1} name={'Our Candidate'} quote={'Here Comes a quote'}/>
+            <Team image={farmer1} name={'Our Candidate'} quote={'Here Comes a quote'}/>
+          </div>
         </div>
         <div className="farmers">
           <h1>Our Farmers</h1>
@@ -108,11 +120,21 @@ function App() {
           <h1>Our Supporting Partners</h1>
           <div className="partner-logo">
             <img src={partner0} alt="image1" />
-            <img src={partner1} alt="image" />
-            <img src={partner2} alt="image" />
-            <img src={partner3} alt="image" />
+            <img src={partner1} alt="image2" />
+            <img src={partner2} alt="image3" />
+            <img src={partner3} alt="image4" />
           </div>
         </div>
+      <div className="achievements">
+        <h1>Our Achievements</h1>
+        <div className="achievement-block">
+          <Achievement image={image2} title={'The best business Model |Award'} date={'23 May 2020'} CG={'cm of uttarpradesh'} />
+        </div>
+      </div>
+      <div className="bottom-text">
+        <p>Grow your agriculture business with FarmsBook</p>
+        <img src={download} alt="Download" />
+      </div>
       </div>
       <Footer />
       </div>
