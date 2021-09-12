@@ -10,11 +10,12 @@ const Crops = ({image, title, organic}) => {
             <div className="crop-content">
                 <div className="crop-text">
                     {organic ? 
-                    <p>Organic</p> : <span> </span>}
-                    <p>{title}</p>
+                    <p className='organic'>Organic</p> : <span> </span>}
+                    <p className="crop-name">{title}</p>
                 </div>
                 <div className="buy-btn">Buy Now</div>
             </div>
+            <div className="overlay"></div>
         </div>
     )
 }

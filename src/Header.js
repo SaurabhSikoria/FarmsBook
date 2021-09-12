@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import logo from './images/farmsbooklogo.png';
+import {Link} from 'react-scroll'
 import {FaBars} from 'react-icons/fa'
 
 const Header = () => {
@@ -30,9 +31,14 @@ const Header = () => {
             </div>
             <div className="menu-bar" ref={wrapper} >
             <FaBars className="bar" onClick={openBar}/>
-            <ul className="menu-content" style={{display: open ? 'block' : 'none'}}>
-                <li>Stats</li>
-                <li>Buy Crops</li>
+            <ul className="menu-content" style={{display: open ? 'flex' : 'none'}}>
+                <Link to='fbGoals' smooth={true} spy={true} exact='true' duration={500} onClick={openBar}>Goals</Link>
+                <Link to='stats' smooth={true} spy={true} exact='true' duration={500} onClick={openBar}>Stats</Link>
+                <Link to='crops' smooth={true} spy={true} exact='true' duration={500} onClick={openBar}>Buy Crops</Link>
+                <Link to='team' smooth={true} spy={true} exact='true' duration={500} onClick={openBar}>Team</Link>
+                <Link to='farmers' smooth={true} spy={true} exact='true' duration={500} onClick={openBar}>farmers</Link>
+                <Link to='partners' smooth={true} spy={true} exact='true' duration={500} onClick={openBar}>Supporting Partners</Link>
+                <Link to='achievements' smooth={true} spy={true} exact='true' duration={500} onClick={openBar}>Achievements</Link>
             </ul>
             </div>
         </header>

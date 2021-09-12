@@ -11,7 +11,7 @@ const Team = ({image, name, quote}) => {
         </div>
         <div className="name">
             <h4>{name}</h4>
-            <p><blockquote>{quote}</blockquote></p>
+            <p>"{quote}"</p>
         </div>
         </div>
     )
